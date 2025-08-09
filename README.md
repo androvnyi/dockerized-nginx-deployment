@@ -25,13 +25,15 @@ Through this project I have:
 
 ###  Project Structure
 
-`ansible-nginx-deploy/
-├── inventory.ini      # you have create inventory file by yourself with your data
+```
+ansible-nginx-deploy/
+├── inventory.ini      you have create inventory file by yourself with your data
 ├── playbook.yml
 ├── files/
 │   └── index.html
 ├── .gitignore
 ├── README.md
+```
 
 ---
 
