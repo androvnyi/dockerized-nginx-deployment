@@ -1,12 +1,12 @@
-# 🚀 Ansible + Dockerized Nginx Deployment
+## Ansible + Dockerized Nginx Deployment
 
-## 📌 Project Overview
+###  Project Overview
 This project demonstrates how to automate the deployment of a Dockerized Nginx web server using **Ansible**.  
 The same Ansible playbook is used to provision both **Dev** and **Prod** environments with minimal manual intervention.
 
 ---
 
-## 🎯 Goals
+###  Goals
 - Implement **Infrastructure as Code** principles
 - Use Ansible to **install Docker** remotely
 - Deploy a **custom HTML landing page** into an Nginx container
@@ -14,7 +14,7 @@ The same Ansible playbook is used to provision both **Dev** and **Prod** environ
 
 ---
 
-## 🧠 What I Learned
+###  What I Learned
 Through this project I have:
 - Configured **Ansible inventory** for multiple environments
 - Automated **Docker installation** and container deployment
@@ -23,5 +23,51 @@ Through this project I have:
 
 ---
 
-## 📂 Project Structure
+###  Project Structure
+
+ansible-nginx-deploy/
+├── inventory.ini      -  you have create inventory file by yourself with your data
+├── playbook.yml
+├── files/
+│   └── index.html
+├── .gitignore
+├── README.md
+
+---
+
+### Technologies Used
+- **Ansible** – automation & configuration management
+- **Docker** – containerized Nginx web server
+- **Linux (Ubuntu)** – target servers
+- **AWS EC2** – hosting Dev & Prod environments
+
+---
+
+##  How to Use
+
+### 1️⃣ Configure Inventory
+git clone ...
+Create  `inventory.ini` and set your server IPs, SSH user, and private key path
+Check conection...!
+Remember to load Ansible onto the control machine.
+Run Deployment:
+`ansible-playbook playbook.yml -i inventory.ini --limit dev`
+`ansible-playbook playbook.yml -i inventory.ini --limit prod`
+
+Verify Deployment:
+Open your pub ip... or `curl http://<server-ip>`
+
+_If something does not work or does not start, try to find the error and fix it, learn how to do it and solve errors, and you will never repeat it again.
+_
+
+**Good luck!** 😊
+
+
+
+
+
+
+
+
+
 
