@@ -48,6 +48,7 @@ ansible-nginx-deploy/
 ##  How to Use
 
 ### 1️⃣ Configure Inventory
+```
 git clone ...
 Create  `inventory.ini` and set your server IPs, SSH user, and private key path
 Check conection...!
@@ -58,7 +59,7 @@ Run Deployment:
 
 Verify Deployment:
 Open your pub ip... or `curl http://<server-ip>`
-
+```
 _If something does not work or does not start, try to find the error and fix it, learn how to do it and solve errors, and you will never repeat it again.
 _
 
