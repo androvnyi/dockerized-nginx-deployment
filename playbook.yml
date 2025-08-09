@@ -1,0 +1,35 @@
+- name: Deploy Docker + Nginx site
+  hosts: all
+  become: true
+  vars_files:
+    - vars/{{ inventory_hostname }}.yml
+  tasks:
+
+    - name: Install Docker
+      ansible.builtin.apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Ensure Docker is running
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Copy index.html to remote
+      ansible.builtin.template:
+        src: files/index.html.j2
+        dest: /home/ubuntu/index.html
+        owner: ubuntu
+        group: ubuntu
+        mode : '0644'
+
+    - name: Run Nginx container with mounted volume
+      ansible.builtin.command: >
+        docker run -d --rm --name nginx_site
+        -p 80:80
+        -v /home/ubuntu/index.html:/usr/share/nginx/html/index.html
+        nginx
+
+

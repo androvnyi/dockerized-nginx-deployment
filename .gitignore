@@ -1,0 +1,12 @@
+.ssh/
+*.pem
+inventory.ini
+*.log
+
+*.swp
+*.swo
+*~
+
+*.retry
+
+
